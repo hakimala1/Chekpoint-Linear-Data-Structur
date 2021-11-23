@@ -1,0 +1,26 @@
+ALGORITHM algorithm_name
+VAR
+   tab1 : ARRAY_OF integer[n];
+   tab2 : ARRAY_OF integer[n];
+   tab3 : HASH_TABLE<integer,integer>
+   som1,som2,i,j,x : INTEGER
+BEGIN
+    som1:=0;
+    som2:=0;
+ FOR i FROM 0 TO tab1.length-1 STEP step  DO
+        tab3.insert(tab1[i],1)
+    END_FOR
+    FOR j FROM 0 TO tab2.length-1 STEP step  DO
+        IF (tab3.lookup(tab2[i])= true) THEN
+            tab3.insert(tab2[i],2)
+        ELSE
+            tab3.insert(tab2[i],1)
+        END_IF
+    END_FOR
+
+    FOR x FROM 0 TO tab1.length-1 STEP step  DO
+        IF (tab3.get(tab1[x]) = 2) THEN
+            som1:= som1+tab1[x]*2
+    END_FOR
+    
+END

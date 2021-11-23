@@ -1,0 +1,36 @@
+ALGORITHM algorithm_name
+VAR
+   tab1 : ARRAY_OF integer[n];
+   tab2 : ARRAY_OF integer[n];
+   tab3 : HASH_TABLE<integer,integer>
+   som1,som2,i,j : INTEGER
+   found : BOOLEAN
+BEGIN
+    som1:=0;
+    som2:=0;
+    FOR j FROM 0 TO tab2.length-1 STEP step  DO
+    found:=false
+    FOR i FROM 0 TO tab1.length-1 STEP step  DO
+            IF (tab2[j]=tab1[i]) THEN
+                found:=true
+                break
+            END_IF
+        END_FOR
+        IF (found=false) THEN
+            som2:=som2+tab2[j]
+        END_IF
+    END_FOR
+
+    FOR i FROM 0 TO tab1.length-1 STEP step  DO
+    found:=false
+    FOR j FROM 0 TO tab2.length-1 STEP step  DO
+            IF (tab2[j]=tab1[i]) THEN
+                found:=true
+                break
+            END_IF
+        END_FOR
+        IF (found=false) THEN
+            som2:=som2+tab1[i]
+        END_IF
+    END_FOR
+END
